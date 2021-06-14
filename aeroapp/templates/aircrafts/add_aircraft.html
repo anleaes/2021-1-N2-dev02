@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}
+
+    Adicionar Aeronave - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+
+    <div class="container">
+        <br />
+    <h5><b>Cadastro de Aeronave</b></h5>
+        <div class="row">
+            <div class ="col-md-12">
+                <form action="" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                   <label for="{{ form.name.id_for_label }}">Nome</label>
+                   {{ form.name|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.description.id_for_label }}">Descricao</label>
+                    {{ form.description|add_class:"form-control" }}
+                 </div>
+                <div class="form-group">
+                    <label for="{{ form.date_fabrication.id_for_label }}">Data de fabricacao</label>
+                    {{ form.date_fabrication|add_class:"form-control" }}
+                 </div>
+                 <div class="form-group">
+                    <label for="{{ form.quantity_pax.id_for_label }}">Quantidade de passageiros</label>
+                    {{ form.quantity_pax|add_class:"form-control" }}
+                 </div>
+                 <div class="form-group">
+                    <label for="{{ form.is_active.id_for_label }}">Ativar</label>
+                    {{ form.is_active }}
+                 </div>
+                    <button type="submit" class="btn btn-primary">Salvar</button>       
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}
