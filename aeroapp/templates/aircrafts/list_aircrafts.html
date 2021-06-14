@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    Lista de Aeronaves - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+
+    <div class="container">
+        <br />
+        <h5><b>Lista de Aeronaves</b></h5>
+        <div class="row">
+            <div class ="col-md-12">
+                <br />
+                    <a href="{% url 'aircrafts:add_aircraft' %}">Cadastro de Nova Aeronave</a>
+                <br />
+                <br />
+                <table class="table table-hover">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Descricao</th>
+                    <th scope="col">Data de fabricacao</th>
+                    <th scope="col">Quantidade de passageiros</th>
+                    <th scope="col">Ativo</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for aircraft in aircrafts %}
+                        <tr>
+                            <th scope="row">{{ aircraft.id }}</th>
+                            <td>{{ aircraft.name }}</td>
+                            <td>{{ aircraft.description }}</td>
+                            <td>{{ aircraft.date_fabrication }}</td>
+                            <td>{{ aircraft.quantity_pax }}</td>
+                            <td>{{ aircraft.is_active }}</td>
+                            <td>
+                                <a href="{% url 'aircrafts:edit_aircraft' aircraft.id %}" class="btn btn-primary btn-sm">Editar</a>
+                            </td>
+                            <td>
+                                <a href="{% url 'aircrafts:delete_aircraft' aircraft.id %}" class="btn btn-danger btn-sm ">Excluir</a>
+                            </td>
+                        </tr> 
+                    {% endfor %}
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}
+

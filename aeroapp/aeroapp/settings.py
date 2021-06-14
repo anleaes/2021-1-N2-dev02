@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'clients.apps.ClientsConfig',
     'orders.apps.OrdersConfig',
     'accounts.apps.AccountsConfig',
+    'aircrafts.apps.AircraftsConfig',
 
 ]
 
