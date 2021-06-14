@@ -47,13 +47,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'widget_tweaks',
     'core.apps.CoreConfig', 
+
     'socialnetworks.apps.SocialnetworksConfig',
-    'categories.apps.CategoriesConfig',
+
+    'aircrafts.apps.AircraftsConfig',
+    'flights.apps.FlightsConfig',
+
     'products.apps.ProductsConfig',
     'clients.apps.ClientsConfig',
     'orders.apps.OrdersConfig',
     'accounts.apps.AccountsConfig',
-    'aircrafts.apps.AircraftsConfig',
+
 
 ]
 

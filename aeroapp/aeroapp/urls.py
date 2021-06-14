@@ -23,12 +23,16 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls', namespace='core')),  
     path('redessociais/', include('socialnetworks.urls', namespace='socialnetworks')),
-    path('categorias/', include('categories.urls', namespace='categories')),
+
+    path('aeronaves/', include('aircrafts.urls', namespace='aircrafts')),
+    path('voos/', include('flights.urls', namespace='flights')),
+
     path('produtos/', include('products.urls', namespace='products')),
     path('clientes/', include('clients.urls', namespace='clients')),
     path('pedidos/', include('orders.urls', namespace='orders')),
     path('contas/', include('accounts.urls', namespace='accounts')),
-    path('aeronaves/', include('aircrafts.urls', namespace='aircrafts')),
+
+
 
 ]
 
