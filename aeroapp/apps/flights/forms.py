@@ -1,5 +1,5 @@
 from django import forms
-from .models import Flight, Aircraft
+from .models import Flight
 
 class FlightForm(forms.ModelForm):
 

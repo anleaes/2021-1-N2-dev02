@@ -12,15 +12,15 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Category',
+            name='Flight',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=50, verbose_name='Nome')),
                 ('description', models.TextField(max_length=100, verbose_name='Descricao')),
             ],
             options={
-                'verbose_name': 'Categoria',
-                'verbose_name_plural': 'Categorias',
+                'verbose_name': 'Voo',
+                'verbose_name_plural': 'Voos',
                 'ordering': ['id'],
             },
         ),

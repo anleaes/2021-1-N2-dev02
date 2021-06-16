@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .forms import FligthForm
+from .forms import FlightForm
 from .models import Flight
 from django.contrib.auth.decorators import login_required
 
@@ -9,13 +9,13 @@ def add_flight(request):
     template_name = 'flights/add_flight.html'
     context = {}
     if request.method == 'POST':
-        form = FligthForm(request.POST)
+        form = FlightForm(request.POST)
         if form.is_valid():
             f = form.save(commit=False)
             f.save()
             form.save_m2m()
             return redirect('flights:list_flights')
-    form = FligthForm()
+    form = FlightForm()
     context['form'] = form
     return render(request, template_name, context)
 
@@ -34,11 +34,11 @@ def edit_flight(request, id_flight):
     context ={}
     flight = get_object_or_404(Flight, id=id_flight)
     if request.method == 'POST':
-        form = FligthForm(request.POST, instance=flight)
+        form = FlightForm(request.POST, instance=flight)
         if form.is_valid():
             form.save()
             return redirect('flights:list_flights')
-    form = FligthForm(instance=flight)
+    form = FlightForm(instance=flight)
     context['form'] = form
     return render(request, template_name, context)
 

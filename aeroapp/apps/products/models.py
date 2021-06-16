@@ -1,6 +1,6 @@
 
 from django.db import models
-from .models import Flight
+#from .models import Flight
 
 
 # Create your models here.
@@ -10,7 +10,7 @@ class Product(models.Model):
     date_fabrication = models.DateField('Data Fabricacao', auto_now=False, auto_now_add=False) 
     is_active = models.BooleanField('Ativo', default=False)
 
-    flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
+    #flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
         
     class Meta:
         verbose_name = 'Produto'

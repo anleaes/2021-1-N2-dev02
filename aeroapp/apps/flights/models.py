@@ -1,5 +1,5 @@
 from django.db import models
-from .models import Aircraft
+#from .models import Aircraft
 
 # Create your models here.
 class Flight(models.Model):
@@ -8,7 +8,7 @@ class Flight(models.Model):
     name = models.CharField('Nome', max_length=50)
     description = models.TextField('Descricao', max_length=100) 
     
-    aircraft = models.ForeignKey(Aircraft, on_delete=models.CASCADE)
+    #aircraft = models.ForeignKey(Aircraft, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'Voo'
