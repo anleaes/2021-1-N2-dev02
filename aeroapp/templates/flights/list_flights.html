@@ -21,9 +21,8 @@
                 <thead>
                     <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Descricao</th>
-                    
+                    <th scope="col">Quantidade de tickets</th>
+                    <th scope="col">Voo cheio</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                     </tr>
@@ -32,9 +31,16 @@
                     {% for flight in flights %}
                         <tr>
                             <th scope="row">{{ flight.id }}</th>
-                            <td>{{ flight.name }}</td>
-                            <td>{{ flight.description }}</td>
+                            <td>{{ flight.quantity }}</td>
+                            <td>{{ flight.is_full }}</td>
                             <td>
+                                <td>
+                                    {% for flight_aircraft in flight_aircrafts %}
+                                        {% if flight_aircraft.flight_id == flight.id %}
+                                            <li>{{ flight_aircraft.aircraft }}</li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </td>
                                 <a href="{% url 'flights:edit_flight' flight.id %}" class="btn btn-primary btn-sm">Editar</a>
                             </td>
                             <td>
