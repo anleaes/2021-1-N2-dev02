@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
 
     'countries.apps.CountriesConfig',
+    'states.apps.StatesConfig',
 
 
 ]
