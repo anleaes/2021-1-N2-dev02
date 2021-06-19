@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    Lista de Rotas - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+
+    <div class="container">
+        <br />
+        <h5><b>Lista de Rotas</b></h5>
+        <div class="row">
+            <div class ="col-md-12">
+                <br />
+                    <a href="{% url 'routes:add_route' %}">Cadastro de nova rota</a>
+                <br />
+                <br />
+                <table class="table table-hover">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Rota</th>
+                    <th scope="col">Cidade Origem</th>
+                    <th scope="col">Cidade Destino</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for route in routes %}
+                        <tr>
+                            <th scope="row">{{ route.id }}</th>
+                            <td>{{ route.name }}</td>
+                            <td>{{ route.city }}</td>
+                            <td>{{ route.city }}</td>
+                            <td>
+                                <a href="{% url 'routes:edit_route' route.id %}" class="btn btn-primary btn-sm">Editar</a>
+                            </td>
+                            <td>
+                                <a href="{% url 'routes:delete_route' route.id %}" class="btn btn-danger btn-sm ">Excluir</a>
+                            </td>
+                        </tr> 
+                    {% endfor %}
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}
