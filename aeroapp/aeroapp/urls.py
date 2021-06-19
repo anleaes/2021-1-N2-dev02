@@ -35,6 +35,7 @@ urlpatterns = [
     path('paises/', include('countries.urls', namespace='countries')),
     path('estados/', include('states.urls', namespace='states')),
     path('cidades/', include('cities.urls', namespace='cities')),
+    path('rotas/', include('routes.urls', namespace='routes')),
 
 ]
 
