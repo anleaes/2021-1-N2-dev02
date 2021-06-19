@@ -58,6 +58,8 @@ INSTALLED_APPS = [
     'orders.apps.OrdersConfig',
     'accounts.apps.AccountsConfig',
 
+    'countries.apps.CountriesConfig',
+
 
 ]
 
