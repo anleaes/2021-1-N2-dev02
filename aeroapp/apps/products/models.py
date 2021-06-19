@@ -1,5 +1,7 @@
+
 from django.db import models
-from categories.models import Category
+#from .models import Flight
+
 
 # Create your models here.
 class Product(models.Model):
@@ -7,8 +9,9 @@ class Product(models.Model):
     description = models.TextField('Descricao', max_length=100)
     date_fabrication = models.DateField('Data Fabricacao', auto_now=False, auto_now_add=False) 
     is_active = models.BooleanField('Ativo', default=False)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    
+
+    #flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
+        
     class Meta:
         verbose_name = 'Produto'
         verbose_name_plural = 'Produtos'

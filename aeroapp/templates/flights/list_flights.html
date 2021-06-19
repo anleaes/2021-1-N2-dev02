@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    Lista de Voos - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+
+    <div class="container">
+        <br />
+        <h5><b>Lista de Voos</b></h5>
+        <div class="row">
+            <div class ="col-md-12">
+                <br />
+                    <a href="{% url 'flights:add_flight' %}">Cadastro de novo voo</a>
+                <br />
+                <br />
+                <table class="table table-hover">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Quantidade de tickets</th>
+                    <th scope="col">Voo cheio</th>
+                    <th scope="col">Aeronave</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for flight in flights %}
+                        <tr>
+                            <th scope="row">{{ flight.id }}</th>
+                            <td>{{ flight.quantity }}</td>
+                            <td>
+                                {% if flight.is_active == True %}
+                                    Voo cheio
+                                {% endif %}
+                                {% if flight.is_active == False %}
+                                    Vagas disponiveis
+                                {% endif %}
+                            </td>
+                            <td>{{ flight.aircraft }}</td>
+                            <td>
+                                <a href="{% url 'flights:edit_flight' flight.id %}" class="btn btn-primary btn-sm">Editar</a>
+                            </td>
+                            <td>    
+                                <a href="{% url 'flights:delete_flight' flight.id %}" class="btn btn-danger btn-sm ">Excluir</a>
+                            </td>
+                        </tr> 
+                    {% endfor %}
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}

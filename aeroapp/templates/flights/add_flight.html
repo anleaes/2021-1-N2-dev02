@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}
+
+    Adicionar Voo - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+
+    <div class="container">
+        <br />
+    <h5><b>Cadastro de Voo</b></h5>
+        <div class="row">
+            <div class ="col-md-12">
+                <form action="" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="{{ form.quantity.id_for_label }}">Quantidade de Tickets</label>
+                    {{ form.quantity|add_class:"form-control" }}
+                 </div>
+                 <div class="form-group">
+                    <label for="{{ form.is_full.id_for_label }}">Voo cheio</label>
+                    {{ form.is_full }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.aircraft.id_for_label }}">Aeronave</label>
+                    {{ form.aircraft|add_class:"form-control" }}
+                </div>
+                    <button type="submit" class="btn btn-primary">Salvar</button>       
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}

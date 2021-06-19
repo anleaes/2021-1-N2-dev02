@@ -1,0 +1,11 @@
+apps/categories/__pycache__/*
+apps/categories/migrations/*
+apps/core/__pycache__/*
+apps/core/migrations/*
+apps/assets/__pycache__/*
+apps/assets/migrations/*
+apps/areas/__pycache__/*
+apps/areas/migrations/*
+apps/units/__pycache__/*
+apps/units/migrations/*
+PatrimonioApp/__pycache__/*

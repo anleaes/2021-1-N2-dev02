@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-class CategoriesConfig(AppConfig):
+class FlightsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'categories'
-    verbose_name = 'Categorias'
+    name = 'flights'
+    verbose_name = 'Voos'

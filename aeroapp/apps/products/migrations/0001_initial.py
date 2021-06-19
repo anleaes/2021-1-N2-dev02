@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('categories', '0001_initial'),
+        #('flights', '0001_initial'),
     ]
 
     operations = [
@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
                 ('description', models.TextField(max_length=100, verbose_name='Descricao')),
                 ('date_fabrication', models.DateField(verbose_name='Data Fabricacao')),
                 ('is_active', models.BooleanField(default=False, verbose_name='Ativo')),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='categories.category')),
+                #('flight', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='flights.flight')),
             ],
             options={
                 'verbose_name': 'Produto',
