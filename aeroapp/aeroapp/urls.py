@@ -32,7 +32,7 @@ urlpatterns = [
     path('pedidos/', include('orders.urls', namespace='orders')),
     path('contas/', include('accounts.urls', namespace='accounts')),
 
-
+    path('paises/', include('countries.urls', namespace='countries')),
 
 ]
 

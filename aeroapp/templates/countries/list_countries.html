@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    Lista de Paises - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+
+    <div class="container">
+        <br />
+        <h5><b>Lista de Países</b></h5>
+        <div class="row">
+            <div class ="col-md-12">
+                <br />
+                    <a href="{% url 'countries:add_country' %}">Cadastro de novo país</a>
+                <br />
+                <br />
+                <table class="table table-hover">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">País</th>
+                    <th scope="col">Código do País</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for country in countries %}
+                        <tr>
+                            <th scope="row">{{ country.id }}</th>
+                            <td>{{ country.name }}</td>
+                            <td>{{ country.country_code }}</td>
+                            <td>
+                                <a href="{% url 'countries:edit_country' country.id %}" class="btn btn-primary btn-sm">Editar</a>
+                            </td>
+                            <td>
+                                <a href="{% url 'countries:delete_country' country.id %}" class="btn btn-danger btn-sm ">Excluir</a>
+                            </td>
+                        </tr> 
+                    {% endfor %}
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}
