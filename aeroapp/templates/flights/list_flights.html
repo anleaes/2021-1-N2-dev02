@@ -23,6 +23,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Quantidade de tickets</th>
                     <th scope="col">Voo cheio</th>
+                    <th scope="col">Aeronave</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                     </tr>
@@ -32,18 +33,19 @@
                         <tr>
                             <th scope="row">{{ flight.id }}</th>
                             <td>{{ flight.quantity }}</td>
-                            <td>{{ flight.is_full }}</td>
                             <td>
-                                <td>
-                                    {% for flight_aircraft in flight_aircrafts %}
-                                        {% if flight_aircraft.flight_id == flight.id %}
-                                            <li>{{ flight_aircraft.aircraft }}</li>
-                                        {% endif %}
-                                    {% endfor %}
-                                </td>
+                                {% if flight.is_active == True %}
+                                    Voo cheio
+                                {% endif %}
+                                {% if flight.is_active == False %}
+                                    Vagas disponiveis
+                                {% endif %}
+                            </td>
+                            <td>{{ flight.aircraft }}</td>
+                            <td>
                                 <a href="{% url 'flights:edit_flight' flight.id %}" class="btn btn-primary btn-sm">Editar</a>
                             </td>
-                            <td>
+                            <td>    
                                 <a href="{% url 'flights:delete_flight' flight.id %}" class="btn btn-danger btn-sm ">Excluir</a>
                             </td>
                         </tr> 

@@ -22,14 +22,15 @@
                     {{ form.quantity|add_class:"form-control" }}
                  </div>
                  <div class="form-group">
-                    <label for="{{ form.is_active.id_for_label }}">Voo cheio</label>
+                    <label for="{{ form.is_full.id_for_label }}">Voo cheio</label>
                     {{ form.is_full }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.aircraft.id_for_label }}">Aeronave</label>
+                    {{ form.aircraft|add_class:"form-control" }}
                 </div>
                     <button type="submit" class="btn btn-primary">Salvar</button>       
                 </form>
-
-
-                
             </div>
         </div>
     </div>
