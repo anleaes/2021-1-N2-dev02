@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    Lista de Cidades - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+
+    <div class="container">
+        <br />
+        <h5><b>Lista de Cidades</b></h5>
+        <div class="row">
+            <div class ="col-md-12">
+                <br />
+                <a href="{% url 'cities:add_city' %}">Cadastro de nova cidade</a>
+                <br />
+                <br />
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Cidade</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        </tr>
+                    </thead>
+                <tbody>
+                    {% for city in cities %}
+                        <tr>
+                            <th scope="row">{{ city.id }}</th>
+                            <td>{{ city.name }}</td>
+                            <td>{{ city.state }}</td>
+                            <td>
+                                <a href="{% url 'cities:edit_city' city.id %}" class="btn btn-primary btn-sm">Editar</a>
+                            </td>
+                            <td>    
+                                <a href="{% url 'cities:delete_city' city.id %}" class="btn btn-danger btn-sm ">Excluir</a>
+                            </td>
+                        </tr> 
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
