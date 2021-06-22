@@ -43,13 +43,6 @@
                             <td>{{ client.email }}</td>
                             <td>{{ client.gender }}</td>
                             <td>
-                                {% for client_socialnetwork in client_socialnetworks %}
-                                    {% if client_socialnetwork.client_id == client.id %}
-                                        <li>{{ client_socialnetwork.socialnetwork }}</li>
-                                    {% endif %}
-                                {% endfor %}
-                            </td>
-                            <td>
                                 <a href="{% url 'clients:edit_client' client.id %}" class="btn btn-primary btn-sm">Editar</a>
                             </td>
                             <td>

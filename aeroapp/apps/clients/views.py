@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import ClientForm
-from .models import Client, Socialnetwork, ClientSocialnetwork
+from .models import Client
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -22,13 +22,9 @@ def add_client(request):
 @login_required(login_url='/contas/login/')
 def list_clients(request):
     template_name = 'clients/list_clients.html'
-    client_socialnetworks = ClientSocialnetwork.objects.filter()
-    socialnetworks = Socialnetwork.objects.filter()
     clients = Client.objects.filter()
     context = {
         'clients': clients,
-        'socialnetworks': socialnetworks,
-        'client_socialnetworks': client_socialnetworks
     }
     return render(request, template_name, context)
 
