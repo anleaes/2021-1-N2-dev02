@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'states.apps.StatesConfig',
     'cities.apps.CitiesConfig',
     'routes.apps.RoutesConfig',
+    'passengers.apps.PassengersConfig',
 
 
 ]

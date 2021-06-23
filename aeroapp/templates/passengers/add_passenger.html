@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}
+
+    Adicionar Passageiro - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+
+    <div class="container">
+        <br />
+    <h5><b>Cadastro de Passageiro</b></h5>
+        <div class="row">
+            <div class ="col-md-12">
+                <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                   <label for="{{ form.first_name.id_for_label }}">Nome</label>
+                   {{ form.first_name|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.last_name.id_for_label }}">Sobrenome</label>
+                    {{ form.last_name|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.address.id_for_label }}">Endereço</label>
+                    {{ form.address|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                  <label for="{{ form.cell_phone.id_for_label }}">Telefone</label>
+                  {{ form.cell_phone|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.email.id_for_label }}">E-mail</label>
+                    {{ form.email|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.gender.id_for_label }}">Genero</label>
+                    {{ form.gender|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.passport.id_for_label }}">Passaporte</label>
+                    {{ form.passport|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.photo.id_for_label }}">Foto</label>
+                    {{ form.photo|add_class:"form-control-file" }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.doc.id_for_label }}">Documentos</label>
+                    {{ form.doc|add_class:"form-control-file" }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.special_needs.id_for_label }}">Atendimento especial?</label>
+                    {{ form.special_needs }}
+                </div>                
+                <div class="form-group">
+                    <label for="{{ form.cargo_allowance.id_for_label }}">Bagagem permitida (KG)</label>
+                    {{ form.cargo_allowance|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.passenger_socialnetwork.id_for_label }}">Redes sociais</label>
+                    {{ form.passenger_socialnetwork|add_class:"form-control" }}
+                </div>
+                </div>
+                    <button type="submit" class="btn btn-primary">Salvar</button>       
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}
