@@ -1,12 +1,15 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import PassengerForm
 from .models import Passenger, Socialnetwork, ClientSocialnetwork
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required(login_url='/contas/login/')
 def add_passenger(request):
     template_name = 'passengers/add_passenger.html'
     context = {}
     if request.method == 'POST':
+        # request.FILES é para os docs e imagem do cadastro de pax
         form = PassengerForm(request.POST, request.FILES)
         if form.is_valid():
             f = form.save(commit=False)
@@ -17,6 +20,7 @@ def add_passenger(request):
     context['form'] = form
     return render(request, template_name, context)
 
+@login_required(login_url='/contas/login/')
 def list_passengers(request):
     template_name = 'passengers/list_passengers.html'
     passenger_socialnetworks = ClientSocialnetwork.objects.filter()
@@ -29,6 +33,7 @@ def list_passengers(request):
     }
     return render(request, template_name, context)
 
+@login_required(login_url='/contas/login/')
 def edit_passenger(request, id_passenger):
     template_name = 'passengers/add_passenger.html'
     context ={}
@@ -42,6 +47,7 @@ def edit_passenger(request, id_passenger):
     context['form'] = form
     return render(request, template_name, context)
 
+@login_required(login_url='/contas/login/')
 def delete_passenger(request, id_passenger):
     passenger = Passenger.objects.get(id=id_passenger)
     passenger.delete()

@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import CountryForm
 from .models import Country
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required(login_url='/contas/login/')
 def add_country(request):
     template_name = 'countries/add_country.html'
     context = {}
@@ -17,6 +19,7 @@ def add_country(request):
     context['form'] = form
     return render(request, template_name, context)
 
+@login_required(login_url='/contas/login/')
 def list_countries(request):
     template_name = 'countries/list_countries.html'
     countries = Country.objects.filter()
@@ -25,6 +28,7 @@ def list_countries(request):
     }
     return render(request, template_name, context)
 
+@login_required(login_url='/contas/login/')
 def edit_country(request, id_country):
     template_name = 'countries/add_country.html'
     context ={}
@@ -38,6 +42,7 @@ def edit_country(request, id_country):
     context['form'] = form
     return render(request, template_name, context)
 
+@login_required(login_url='/contas/login/')
 def delete_country(request, id_country):
     country = Country.objects.get(id=id_country)
     country.delete()

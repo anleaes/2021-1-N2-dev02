@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import StateForm
 from .models import State
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required(login_url='/contas/login/')
 def add_state(request):
     template_name = 'states/add_state.html'
     context = {}
@@ -17,6 +19,7 @@ def add_state(request):
     context['form'] = form
     return render(request, template_name, context)
 
+@login_required(login_url='/contas/login/')
 def list_states(request):
     template_name = 'states/list_states.html'
     states = State.objects.filter()
@@ -25,6 +28,7 @@ def list_states(request):
     }
     return render(request, template_name, context)
 
+@login_required(login_url='/contas/login/')
 def edit_state(request, id_state):
     template_name = 'states/add_state.html'
     context ={}
@@ -38,6 +42,7 @@ def edit_state(request, id_state):
     context['form'] = form
     return render(request, template_name, context)
 
+@login_required(login_url='/contas/login/')
 def delete_state(request, id_state):
     state = State.objects.get(id=id_state)
     state.delete()

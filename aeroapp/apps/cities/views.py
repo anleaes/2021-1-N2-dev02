@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import CityForm
 from .models import City
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required(login_url='/contas/login/')
 def add_city(request):
     template_name = 'cities/add_city.html'
     context = {}
@@ -17,6 +19,7 @@ def add_city(request):
     context['form'] = form
     return render(request, template_name, context)
 
+@login_required(login_url='/contas/login/')
 def list_cities(request):
     template_name = 'cities/list_cities.html'
     cities = City.objects.filter()
@@ -25,6 +28,7 @@ def list_cities(request):
     }
     return render(request, template_name, context)
 
+@login_required(login_url='/contas/login/')
 def edit_city(request, id_city):
     template_name = 'cities/add_city.html'
     context ={}
@@ -38,6 +42,7 @@ def edit_city(request, id_city):
     context['form'] = form
     return render(request, template_name, context)
 
+@login_required(login_url='/contas/login/')
 def delete_city(request, id_city):
     city = City.objects.get(id=id_city)
     city.delete()
