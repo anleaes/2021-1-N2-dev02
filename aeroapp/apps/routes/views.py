@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import RouteForm
 from .models import Route, City
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required(login_url='/contas/login/')
 def add_route(request):
     template_name = 'routes/add_route.html'
     context = {}
@@ -18,6 +20,7 @@ def add_route(request):
     context['form'] = form
     return render(request, template_name, context)
 
+@login_required(login_url='/contas/login/')
 def list_routes(request):
     template_name = 'routes/list_routes.html'
     routes = Route.objects.filter()
@@ -28,6 +31,7 @@ def list_routes(request):
     }
     return render(request, template_name, context)
 
+@login_required(login_url='/contas/login/')
 def edit_route(request, id_route):
     template_name = 'routes/add_route.html'
     context ={}
@@ -41,6 +45,7 @@ def edit_route(request, id_route):
     context['form'] = form
     return render(request, template_name, context)
 
+@login_required(login_url='/contas/login/')
 def delete_route(request, id_route):
     route = Route.objects.get(id=id_route)
     route.delete()
