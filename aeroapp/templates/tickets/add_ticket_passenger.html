@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}
+
+    Adicionar Passageiro do Ticket - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+
+    <div class="container">
+        <br />
+    <h5><b>Adicionar Passageiro do Ticket</b></h5>
+        <div class="row">
+            <div class ="col-md-12">
+                <form action="" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="{{ form.seat.id_for_label }}">Assento</label>
+                    {{ form.seat|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.unitary_price.id_for_label }}">Preço Unitário</label>
+                    {{ form.unitary_price|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.passenger.id_for_label }}">Passageiro</label>
+                    {{ form.passenger|add_class:"form-control" }}
+                </div>
+                    <button type="submit" class="btn btn-primary">Salvar</button>       
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}

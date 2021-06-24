@@ -37,6 +37,7 @@ urlpatterns = [
     path('cidades/', include('cities.urls', namespace='cities')),
     path('rotas/', include('routes.urls', namespace='routes')),
     path('passageiros/', include('passengers.urls', namespace='passengers')),
+    path('tickets/', include('tickets.urls', namespace='tickets')),
 
 ]
 
