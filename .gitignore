@@ -31,3 +31,12 @@ aeroapp/apps/socialnetworks/__pycache__/*
 aeroapp/apps/socialnetworks/migrations/*
 aeroapp/apps/states/__pycache__/*
 aeroapp/apps/states/migrations/*
+ aeroapp/aeroapp/__pycache__/settings.cpython-39.pyc
+aeroapp/aeroapp/__pycache__/urls.cpython-39.pyc
+aeroapp/apps/cities/__pycache__/views.cpython-39.pyc
+aeroapp/apps/clients/__pycache__/models.cpython-39.pyc
+aeroapp/apps/clients/__pycache__/views.cpython-39.pyc
+aeroapp/apps/countries/__pycache__/views.cpython-39.pyc
+aeroapp/apps/routes/__pycache__/models.cpython-39.pyc
+aeroapp/apps/routes/__pycache__/views.cpython-39.pyc
+aeroapp/apps/states/__pycache__/views.cpython-39.pyc 
