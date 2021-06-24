@@ -10,16 +10,23 @@
 
     <div class="container">
         <br />
-        <h5><b>Lista de Voos</b></h5>
+        <h5><b>Lista de Voos x Tickets</b></h5>
         <!-- <h5><b>Lista de Tickets</b></h5> -->
         <div class="row">
             <div class ="col-md-12">
+
+                <br />
+                <a href="{% url 'tickets:add_ticket' %}">Cadastro de novo ticket</a>
+                <br />
+                <br />
+    
+
             <br />
                 <table class="table table-hover">
                 <thead>
                     <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Status</th>
+                    <!-- <th scope="col">Status</th>-->
                     <th scope="col">Voo</th>
                     <th scope="col">Preco Total</th>
                     <th scope="col">Passageiros do ticket</th>
@@ -27,6 +34,7 @@
                     <th scope="col"></th>
                     </tr>
                 </thead>
+
                 <tbody>
                     {% for ticket in tickets %}
                         <tr>
@@ -87,9 +95,26 @@
                         </tr> 
                     {% endfor %}
                 </tbody>
-                </table>
-            </div>
+
+                <!--<tbody>
+                    {% for ticket in tickets %}
+                    <tr>
+                        <th scope="row">{{ ticket.id }}</th>
+                        <td>{{ ticket.flight }}</td>
+                        <td>{{ ticket.price }}</td>
+                        <td>{{ ticket.passenger }}</td>
+                        <td>
+                            <a href="{% url 'tickets:edit_ticket' ticket.id %}" class="btn btn-primary btn-sm">Editar</a>
+                            <a href="{% url 'tickets:delete_ticket' ticket.id %}"
+                                class="btn btn-danger btn-sm ">Excluir</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>-->
+
+            </table>
         </div>
     </div>
+</div>
 
 {% endblock body %}
