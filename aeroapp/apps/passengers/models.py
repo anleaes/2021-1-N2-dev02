@@ -1,5 +1,4 @@
 from django.db import models
-from django.db import models
 from socialnetworks.models import Socialnetwork
 
 # Create your models here.
