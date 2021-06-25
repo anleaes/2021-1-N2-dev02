@@ -3,19 +3,12 @@ from cities.models import City
 
 # Create your models here.
 
-
-#  class City(models.Model):
-#     city_from = models.ForeignKey(City, on_delete=models.CASCADE)
-#     city_to = models.ForeignKey(City, on_delete=models.CASCADE)
-
-
 class Route(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    name = models.CharField('Nome', max_length=50)
-    city = models.ForeignKey(City, on_delete=models.CASCADE)
-    city = models.ForeignKey(City, on_delete=models.CASCADE)
-    
+    city_from = models.CharField('Origem', max_length=50)
+    city_to = models.CharField('Destino', max_length=50)
+
     class Meta:
         verbose_name = 'Rota'
         verbose_name_plural = 'Rotas'

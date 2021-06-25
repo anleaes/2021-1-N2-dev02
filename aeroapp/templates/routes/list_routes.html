@@ -21,7 +21,6 @@
                 <thead>
                     <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Rota</th>
                     <th scope="col">Cidade Origem</th>
                     <th scope="col">Cidade Destino</th>
                     <th scope="col"></th>
@@ -32,9 +31,8 @@
                     {% for route in routes %}
                         <tr>
                             <th scope="row">{{ route.id }}</th>
-                            <td>{{ route.name }}</td>
-                            <td>{{ route.city }}</td>
-                            <td>{{ route.city }}</td>
+                            <td>{{ route.city_from }}</td>
+                            <td>{{ route.city_to }}</td>
                             <td>
                                 <a href="{% url 'routes:edit_route' route.id %}" class="btn btn-primary btn-sm">Editar</a>
                             </td>

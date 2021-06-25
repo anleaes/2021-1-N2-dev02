@@ -12,7 +12,6 @@ def add_route(request):
         form = RouteForm(request.POST)
         if form.is_valid():
             f = form.save(commit=False)
-            f.city = City.objects.get(id=id_city)
             f.save()
             form.save_m2m()
             return redirect('routes:list_routes')

@@ -36,7 +36,6 @@
                     <th scope="col"></th>
                     <th scope="col"></th>
                     <th scope="col"></th>
-                    <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -73,9 +72,6 @@
                             </td>
                             <td>
                                 <a href="{% url 'passengers:delete_passenger' passenger.id %}" class="btn btn-danger btn-sm ">Excluir</a>
-                            </td>
-                            <td>
-                                <a href="{% url 'tickets:add_ticket' %}" class="btn btn-primary btn-sm">Comprar</a>
                             </td>
                         </tr> 
                     {% endfor %}

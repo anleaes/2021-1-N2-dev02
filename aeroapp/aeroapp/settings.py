@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'widget_tweaks',
     'core.apps.CoreConfig', 
-
     'socialnetworks.apps.SocialnetworksConfig',
     'aircrafts.apps.AircraftsConfig',
     'flights.apps.FlightsConfig',
@@ -58,8 +57,6 @@ INSTALLED_APPS = [
     'routes.apps.RoutesConfig',
     'passengers.apps.PassengersConfig',
     'tickets.apps.TicketsConfig',
-
-
 ]
 
 MIDDLEWARE = [

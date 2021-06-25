@@ -15,8 +15,7 @@ class Ticket(models.Model):
     )
     status = models.CharField('Status', max_length=20, choices=STATUS_CHOICES, null=True, blank=True, default='Em andamento')
     flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
-    ticket_passenger = models.ForeignKey(Passenger, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE) 
+    passenger = models.ForeignKey(Passenger, on_delete=models.CASCADE)
     
     class Meta:
         verbose_name = 'Ticket'
@@ -25,21 +24,4 @@ class Ticket(models.Model):
 
     def __str__(self):
         return "%s" % (self.total_price) 
-
-
-class TicketPassenger(models.Model):
-    created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
-    seat = models.CharField('Assento',max_length=4,null=True, blank=True,default=0)
-    unitary_price = models.FloatField('Preco unitario',null=True, blank=True, default=0.0)
-    ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
-    passenger = models.ForeignKey(Passenger, on_delete=models.CASCADE)
-
-    class Meta:
-        verbose_name = 'Passageiro do ticket'
-        verbose_name_plural = 'Passageiros do ticket'
-        ordering =['id']
-
-    def __str__(self):
-        return "%s" % (self.passenger) 
 

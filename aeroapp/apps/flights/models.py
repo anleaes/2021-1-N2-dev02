@@ -2,6 +2,7 @@ from django.db import models
 from aircrafts.models import Aircraft
 
 # Create your models here.
+
 class Flight(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -16,16 +17,3 @@ class Flight(models.Model):
 
     def __str__(self):
         return self.name
-
-#
-#class Aircraft(models.Model):
-#    aircraft = models.ForeignKey(Aircraft, on_delete=models.CASCADE)
-#
-#    class Meta:
-#        verbose_name = 'Aeronave do voo'
-#        verbose_name_plural = 'Aeronaves do voo'
-#        ordering =['id']
-#
-#    def __str__(self):
-#       return self.aircraft.name
-#

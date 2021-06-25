@@ -2,6 +2,7 @@ from django.db import models
 from socialnetworks.models import Socialnetwork
 
 # Create your models here.
+
 class Passenger(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)

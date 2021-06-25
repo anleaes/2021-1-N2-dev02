@@ -38,7 +38,6 @@
                 </li>
             </ul>
 
-
             <div class="collapse navbar-collapse" id="navbarsExample05">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown">
@@ -47,7 +46,6 @@
                         <div class="dropdown-menu" aria-labelledby="dropdown05">
                             <a class="dropdown-item" href="{% url 'socialnetworks:list_socialnetworks' %}">Redes Sociais</a>
                             <a class="dropdown-item" href="{% url 'passengers:list_passengers' %}">Passageiros</a>
-                            <!-- <a class="dropdown-item" href="{% url 'clients:list_clients' %}">Clientes</a>-->
                         </div>
                     </li>
                 </ul>
@@ -71,9 +69,6 @@
                             aria-haspopup="true" aria-expanded="false">Tickets</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown05">
                             <a class="dropdown-item" href="{% url 'tickets:list_tickets' %}">Tickets</a>
-                            <!-- <a class="dropdown-item" href="{% url 'products:list_products' %}">Produtos</a>-->
-                            <!-- <a class="dropdown-item" href="{% url 'orders:list_orders' %}">Pedidos</a>-->
-    
                         </div>
                     </li>
                 </ul>
@@ -99,7 +94,6 @@
         {% endif %}
     </nav>
     <!-- FIM: Bloco do Bootstrap a ser incluido -->
-
 
     {% block body %}
 

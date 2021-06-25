@@ -26,10 +26,9 @@
                 <thead>
                     <tr>
                     <th scope="col">#</th>
-                    <!-- <th scope="col">Status</th>-->
-                    <th scope="col">Voo</th>
                     <th scope="col">Preco Total</th>
-                    <th scope="col">Passageiros do ticket</th>
+                    <th scope="col">Passageiro</th>
+                    <th scope="col">Voo</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                     </tr>
@@ -39,58 +38,25 @@
                     {% for ticket in tickets %}
                         <tr>
                             <th scope="row">
-                                {% if ticket.status == 'Finalizado' or ticket.status == 'Cancelado' %}
-                                    <p style="color:darkgray;" >{{ ticket.id }}</p>
-                                {% else %}
-                                    {{ ticket.id }}
-                                {% endif %}
+                                {{ ticket.id }}
                             </th>
                             <td>
-                                {% if ticket.status == 'Finalizado' or ticket.status == 'Cancelado' %}
-                                    <p style="color:darkgray;" >{{ ticket.status }}</p>
-                                {% else %}
-                                    {{ ticket.status }}
-                                {% endif %}
+                                {{ ticket.status }}
                             </td>
                             <td>
-                                {% for flight in flights %}
-                                    {% if ticket.flight_id == flight.id %}
-                                        {% if ticket.status == 'Finalizado' or ticket.status == 'Cancelado' %}
-                                            <p style="color:darkgray;" >{{ passenger.first_name }} {{ passenger.last_name }}</p>
-                                        {% else %}
-                                            {{ passenger.first_name }} {{ passenger.last_name }}
-                                        {% endif %}
-                                    {% endif %}
-                                {% endfor %}   
+                                R$ {{ ticket.total_price }}
                             </td>
                             <td>
-                                {% if ticket.status == 'Finalizado' or ticket.status == 'Cancelado' %}
-                                    <p style="color:darkgray;" >R$ {{ ticket.total_price }}</p>
-                                {% else %}
-                                    R$ {{ ticket.total_price }}
-                                {% endif %}
+                                {{ ticket.flight }}
                             </td>
                             <td>
-                                {% if ticket.status == 'Finalizado' or ticket.status == 'Cancelado' %}
-                                    <a href="#" class="btn btn-primary btn-sm disabled">Adicionar passageiros</a>
-                                {% else %}
-                                    <a href="{% url 'tickets:add_ticket_passenger' ticket.id %}" class="btn btn-primary btn-sm">Adicionar passageiros</a>
-                                {% endif %}
-                                <br /><br />
-                                {% for ticket_passenger in ticket_passengers %}
-                                    {% if ticket_passenger.ticket_id == ticket.id %}
-                                        Passageiro: {{ ticket_passenger.passenger}}<br /> 
-                                        Assento: {{ ticket_passenger.seat}}<br />
-                                        Valor Unitario: R$ {{ ticket_passenger.unitary_price }}<br />
-                                        <a href="{% url 'tickets:delete_ticket_passenger' ticket_passenger.id %}">Excluir passageiro</a><br /><br />
-                                    {% endif %}
-                                {% endfor %}
+                                {{ ticket.passenger }}
                             </td>
                             <td>
-                                <a href="{% url 'tickets:edit_ticket_status' ticket.id %}" class="btn btn-danger btn-sm ">Alterar Status</a>
+                                <a href="{% url 'tickets:edit_ticket' ticket.id %}" class="btn btn-danger btn-sm ">Editar</a>
                             </td>
                             <td>
-                                <a href="{% url 'tickets:delete_ticket' ticket.id %}" class="btn btn-danger btn-sm ">Excluir ticket</a>
+                                <a href="{% url 'tickets:delete_ticket' ticket.id %}" class="btn btn-danger btn-sm ">Excluir</a>
                             </td>
                         </tr> 
                     {% endfor %}
