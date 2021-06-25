@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .forms import TicketForm, TicketPassengerForm
-from .models import Ticket, TicketPassenger, Passenger, Flight
+from .forms import TicketForm
+from .models import Ticket
 
 # Create your views here.
 
@@ -22,12 +22,8 @@ def add_ticket(request):
 def list_tickets(request):
     template_name = 'tickets/list_tickets.html'
     tickets = Ticket.objects.filter()
-    passengers = Passenger.objects.filter()
-    flights = Flight.objects.filter()
     context = {
         'tickets': tickets,
-        'passengers': passengers,
-        'flights': flights
     }
     return render(request, template_name, context)
 

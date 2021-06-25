@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import RouteForm
-from .models import Route, City
+from .models import Route
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.

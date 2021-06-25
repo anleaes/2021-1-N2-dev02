@@ -1,14 +1,9 @@
 from django import forms
-from .models import Ticket, Flight, TicketPassenger
+from .models import Ticket
 
 class TicketForm(forms.ModelForm):
 
     class Meta:
         model = Ticket
-        exclude = ('user', 'flight', 'created_on' , 'updated_on',)
+        exclude = ('created_on' , 'updated_on',)
 
-class TicketPassengerForm(forms.ModelForm):
-    
-    class Meta:
-        model = TicketPassenger
-        exclude = ('user','ticket', 'created_on' , 'updated_on',)

@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import PassengerForm
-from .models import Passenger, Socialnetwork, ClientSocialnetwork
+from .models import Passenger, Socialnetwork
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -9,7 +9,6 @@ def add_passenger(request):
     template_name = 'passengers/add_passenger.html'
     context = {}
     if request.method == 'POST':
-        # request.FILES é para os docs e imagem do cadastro de pax
         form = PassengerForm(request.POST, request.FILES)
         if form.is_valid():
             f = form.save(commit=False)

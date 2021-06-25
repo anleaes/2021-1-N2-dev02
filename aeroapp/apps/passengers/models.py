@@ -22,7 +22,7 @@ class Passenger(models.Model):
     doc = models.FileField('Documentos', upload_to='docs')
     special_needs = models.BooleanField('Atendimento especial?', default=False)
     cargo_allowance = models.IntegerField('Bagagem permitida (KG)',null=True, blank=True,default=0)
-    passenger_socialnetwork = models.ManyToManyField(Socialnetwork, through='ClientSocialnetwork', blank=True)
+    socialnetwork = models.ManyToManyField(Socialnetwork)
     
     class Meta:
         verbose_name = 'Passageiro'
@@ -31,18 +31,3 @@ class Passenger(models.Model):
 
     def __str__(self):
         return self.first_name
-
-
-class ClientSocialnetwork(models.Model):
-    created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
-    passenger = models.ForeignKey(Passenger, on_delete=models.CASCADE)
-    socialnetwork = models.ForeignKey(Socialnetwork, on_delete=models.CASCADE)
-
-    class Meta:
-        verbose_name = 'Item de Redes Social'
-        verbose_name_plural = 'Itens de Rede Social'
-        ordering =['id']
-
-    def __str__(self):
-        return self.socialnetwork.name
