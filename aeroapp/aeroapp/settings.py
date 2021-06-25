@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'routes.apps.RoutesConfig',
     'passengers.apps.PassengersConfig',
     'tickets.apps.TicketsConfig',
+    'flights.apps.FlightsConfig',
 ]
 
 MIDDLEWARE = [
