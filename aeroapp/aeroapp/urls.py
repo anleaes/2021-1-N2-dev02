@@ -24,7 +24,6 @@ urlpatterns = [
     path('', include('core.urls', namespace='core')),  
     path('redessociais/', include('socialnetworks.urls', namespace='socialnetworks')),
     path('aeronaves/', include('aircrafts.urls', namespace='aircrafts')),
-    path('voos/', include('flights.urls', namespace='flights')),
     path('contas/', include('accounts.urls', namespace='accounts')),
     path('paises/', include('countries.urls', namespace='countries')),
     path('estados/', include('states.urls', namespace='states')),
