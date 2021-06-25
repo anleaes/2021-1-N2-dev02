@@ -49,15 +49,9 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig', 
 
     'socialnetworks.apps.SocialnetworksConfig',
-
     'aircrafts.apps.AircraftsConfig',
     'flights.apps.FlightsConfig',
-
-    'products.apps.ProductsConfig',
-    'clients.apps.ClientsConfig',
-    'orders.apps.OrdersConfig',
     'accounts.apps.AccountsConfig',
-
     'countries.apps.CountriesConfig',
     'states.apps.StatesConfig',
     'cities.apps.CitiesConfig',

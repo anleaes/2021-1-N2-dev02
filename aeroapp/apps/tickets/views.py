@@ -3,14 +3,13 @@ from .forms import TicketForm, TicketPassengerForm
 from .models import Ticket, TicketPassenger, Passenger, Flight
 
 # Create your views here.
-def add_ticket(request, id_flight):
+def add_ticket(request):
     template_name = 'tickets/add_ticket.html'
     context = {}
     if request.method == 'POST':
         form = TicketForm(request.POST)
         if form.is_valid():
             f = form.save(commit=False)
-            f.flight = Flight.objects.get(id=id_flight)
             f.user = request.user
             f.save()
             form.save_m2m()
@@ -37,22 +36,6 @@ def delete_ticket(request, id_ticket):
     ticket = Ticket.objects.get(id=id_ticket)
     ticket.delete()
     return redirect('tickets:list_tickets')
-
-def add_ticket_passenger(request, id_ticket):
-    template_name = 'tickets/add_ticket_passenger.html'
-    context = {}
-    if request.method == 'POST':
-        form = TicketPassengerForm(request.POST)
-        if form.is_valid():
-            f = form.save(commit=False)
-            f.ticket = Ticket.objects.get(id=id_ticket)  
-            f.user = request.user     
-            f.save()
-            form.save_m2m()
-            return redirect('tickets:list_tickets')
-    form = TicketPassengerForm()
-    context['form'] = form
-    return render(request, template_name, context)
 
 def delete_ticket_passenger(request, id_ticket_passenger):
     ticketpassenger = TicketPassenger.objects.get(id=id_ticket_passenger) #pode ser isso aqui, trocar para ticketpassenger

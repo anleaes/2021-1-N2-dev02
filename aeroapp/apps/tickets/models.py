@@ -15,8 +15,8 @@ class Ticket(models.Model):
     )
     status = models.CharField('Status', max_length=20, choices=STATUS_CHOICES, null=True, blank=True, default='Em andamento')
     flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
+    ticket_passenger = models.ForeignKey(Passenger, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE) 
-    ticket_passenger = models.ManyToManyField(Passenger, through='TicketPassenger', blank=True)
     
     class Meta:
         verbose_name = 'Ticket'
