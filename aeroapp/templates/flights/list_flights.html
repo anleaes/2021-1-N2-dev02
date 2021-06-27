@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    Lista de Paises - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+
+    <div class="container">
+        <br />
+        <h5><b>Lista de Países</b></h5>
+        <div class="row">
+            <div class ="col-md-12">
+                <br />
+                    <a href="{% url 'flights:add_flight' %}">Cadastro de novo voo</a>
+                <br />
+                <br />
+                <table class="table table-hover">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Quantidade</th>
+                    <th scope="col">Esta cheio</th>
+                    <th scope="col">Aeronave</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for flight in flights %}
+                        <tr>
+                            <th scope="row">{{ flight.id }}</th>
+                            <td>{{ flight.quantity }}</td>
+                            <td>{{ flight.is_full }}</td>
+                            <td>{{ flight.aircraft }}</td>
+                            <td>
+                                <a href="{% url 'flights:edit_flight' flight.id %}" class="btn btn-primary btn-sm">Editar</a>
+                            </td>
+                            <td>
+                                <a href="{% url 'flights:delete_flight' flight.id %}" class="btn btn-danger btn-sm ">Excluir</a>
+                            </td>
+                        </tr> 
+                    {% endfor %}
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}

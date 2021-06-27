@@ -31,6 +31,7 @@ urlpatterns = [
     path('rotas/', include('routes.urls', namespace='routes')),
     path('passageiros/', include('passengers.urls', namespace='passengers')),
     path('tickets/', include('tickets.urls', namespace='tickets')),
+    path('flights/', include('flights.urls', namespace='flights')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
