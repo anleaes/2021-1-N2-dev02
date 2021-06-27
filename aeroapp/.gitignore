@@ -9,3 +9,4 @@ apps/areas/migrations/*
 apps/units/__pycache__/*
 apps/units/migrations/*
 PatrimonioApp/__pycache__/*
+media/*
