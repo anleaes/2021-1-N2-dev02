@@ -25,6 +25,8 @@
                     <th scope="col">Quantidade</th>
                     <th scope="col">Esta cheio</th>
                     <th scope="col">Aeronave</th>
+                    <th scope="col">Cidade Origem</th>
+                    <th scope="col">Cidade Destino</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                     </tr>
@@ -37,6 +39,8 @@
                             <td>{{ flight.quantity }}</td>
                             <td>{{ flight.is_full }}</td>
                             <td>{{ flight.aircraft }}</td>
+                            <td>{{ flight.city_from }}</td>
+                            <td>{{ flight.city_to }}</td>
                             <td>
                                 <a href="{% url 'flights:edit_flight' flight.id %}" class="btn btn-primary btn-sm">Editar</a>
                             </td>

@@ -17,6 +17,7 @@
             <div class ="col-md-12">
                 <form action="" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
+                <!--
                 <div class="form-group">
                     <label for="{{ form.city.id_for_label }}">Cidade Origem</label>
                     {{ form.city_from|add_class:"form-control" }}
@@ -25,6 +26,7 @@
                     <label for="{{ form.city.id_for_label }}">Cidade Destino</label>
                     {{ form.city_to|add_class:"form-control" }}
                 </div>
+                -->
                     <button type="submit" class="btn btn-primary">Salvar</button>       
                 </form>
             </div>

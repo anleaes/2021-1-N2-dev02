@@ -20,7 +20,7 @@
                 <div class="form-group">
                     <label for="{{ form.cod_flight.id_for_label }}">Codigo do Voo</label>
                     {{ form.cod_flight|add_class:"form-control" }}
-                 </div>
+                </div>
                 <div class="form-group">
                    <label for="{{ form.quantity.id_for_label }}">Quantidade</label>
                    {{ form.quantity|add_class:"form-control" }}
@@ -28,12 +28,19 @@
                 <div class="form-group">
                     <label for="{{ form.is_full.id_for_label }}">Esta cheio</label>
                     {{ form.is_full }}
-                 </div>
-                 
-                 <div class="form-group">
+                </div>
+                <div class="form-group">
                     <label for="{{ form.aircraft.id_for_label }}">Aeronave</label>
                     {{ form.aircraft|add_class:"form-control" }}
-                 </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.city.id_for_label }}">Cidade Origem</label>
+                    {{ form.city_from|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.city.id_for_label }}">Cidade Destino</label>
+                    {{ form.city_to|add_class:"form-control" }}
+                </div>
                     <button type="submit" class="btn btn-primary">Salvar</button>       
                 </form>
             </div>

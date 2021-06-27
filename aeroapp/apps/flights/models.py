@@ -1,5 +1,6 @@
 from django.db import models
 from aircrafts.models import Aircraft
+from cities.models import City
 
 # Create your models here.
 
@@ -10,6 +11,8 @@ class Flight(models.Model):
     quantity = models.IntegerField('Quantidade', null=True, blank=True, default=0)
     is_full = models.BooleanField('Voo cheio', default=False)
     aircraft = models.ForeignKey(Aircraft, on_delete=models.CASCADE)
+    city_from = models.ForeignKey(City, on_delete=models.CASCADE, related_name='city_from')
+    city_to = models.ForeignKey(City, on_delete=models.CASCADE, related_name='city_to')
 
     class Meta:
         verbose_name = 'Voo'
