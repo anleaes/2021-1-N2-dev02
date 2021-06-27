@@ -16,4 +16,4 @@ class Flight(models.Model):
         ordering =['id']
 
     def __str__(self):
-        return self.quantity
+        return "%s" % (self.quantity)

@@ -22,7 +22,7 @@ def add_passenger(request):
 @login_required(login_url='/contas/login/')
 def list_passengers(request):
     template_name = 'passengers/list_passengers.html'
-    passenger_socialnetworks = ClientSocialnetwork.objects.filter()
+    passenger_socialnetworks = Socialnetwork.objects.filter()
     socialnetworks = Socialnetwork.objects.filter()
     passengers = Passenger.objects.filter()
     context = {

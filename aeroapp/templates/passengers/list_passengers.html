@@ -51,22 +51,9 @@
                             <td>{{ passenger.passport }}</td>
                             <td>{{ passenger.photo }}</td>
                             <td>{{ passenger.doc }}</td>
-                            <td>
-                                {% if product.special_needs == True %}
-                                    Sim
-                                {% endif %}
-                                {% if product.special_needs == False %}
-                                    Não
-                                {% endif %}
-                            </td>
+                            <td>{{ passenger.special_needs }}</td>
                             <td>{{ passenger.cargo_allowance }}</td>
-                            <td>
-                                {% for passenger_socialnetwork in passenger_socialnetworks %}
-                                    {% if passenger_socialnetwork.client_id == passenger.id %}
-                                        <li>{{ passenger_socialnetwork.socialnetwork }}</li>
-                                    {% endif %}
-                                {% endfor %}
-                            </td>
+                            <td>{{ passenger.socialnetwork }}</td>
                             <td>
                                 <a href="{% url 'passengers:edit_passenger' passenger.id %}" class="btn btn-primary btn-sm">Editar</a>
                             </td>

@@ -23,10 +23,8 @@ def add_route(request):
 def list_routes(request):
     template_name = 'routes/list_routes.html'
     routes = Route.objects.filter()
-    cities = City.objects.filter()
     context = {
         'routes': routes,
-        'cities': cities
     }
     return render(request, template_name, context)
 
