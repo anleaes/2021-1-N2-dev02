@@ -28,7 +28,7 @@ def list_tickets(request):
     return render(request, template_name, context)
 
 def edit_ticket(request, id_ticket):
-    template_name = 'tickets/edit_ticket.html'
+    template_name = 'tickets/add_ticket.html'
     context ={}
     ticket = get_object_or_404(Ticket, id=id_ticket)
     if request.method == 'POST':

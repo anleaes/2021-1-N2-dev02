@@ -30,4 +30,4 @@ class Passenger(models.Model):
         ordering =['id']
 
     def __str__(self):
-        return self.first_name
+        return "%s %s" % (self.first_name,self.last_name)
