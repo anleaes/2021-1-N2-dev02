@@ -49,8 +49,12 @@
                             <td>{{ passenger.email }}</td>
                             <td>{{ passenger.gender }}</td>
                             <td>{{ passenger.passport }}</td>
-                            <td>{{ passenger.photo }}</td>
-                            <td>{{ passenger.doc }}</td>
+                            <td>
+                                <img src="{{ passenger.photo.url }}" width="50" height="50">
+                            </td>
+                            <td>
+                                <a href="{{ passenger.doc.url }}" >{{ passenger.doc.url }}</a>
+                            </td>
                             <td>
                                 {% if passenger.special_needs == True %}
                                     Sim
@@ -60,7 +64,14 @@
                                 {% endif %}
                             </td>
                             <td>{{ passenger.cargo_allowance }}</td>
-                            <td>{{ passenger.socialnetwork }}</td>
+                            <!--<td>{{ passenger.socialnetwork }}</td>-->
+                            <td>
+                                {% for socialnetwork in socialnetworks %}
+                                    {% if socialnetwork.passenger_id == passenger.id %}
+                                        <li>{{ socialnetwork.socialnetwork }}</li>
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
                             <td>
                                 <a href="{% url 'passengers:edit_passenger' passenger.id %}" class="btn btn-primary btn-sm">Editar</a>
                             </td>
