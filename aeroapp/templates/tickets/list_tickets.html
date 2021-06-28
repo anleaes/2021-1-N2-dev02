@@ -28,6 +28,7 @@
                     <th scope="col">Passageiro</th>
                     <th scope="col">Voo</th>
                     <th scope="col">Cliente</th>
+                    <th scope="col">Extras</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                     </tr>
@@ -52,7 +53,13 @@
                                 {{ ticket.passenger }}
                             </td>
                             <td>
-                                <a href="{% url 'tickets:edit_ticket' ticket.id %}" class="btn btn-danger btn-sm ">Editar</a>
+                                <a href="{% url 'tickets:edit_ticket' ticket.id %}" class="btn btn-primary btn-sm ">Adicionar</a>
+                                <br /> Primeira classe - R$ 1000,00 
+                                <br /> Caviar - R$ 300,00 
+                                <br /> Champagne - R$ 500,00 
+                            </td>
+                            <td>
+                                <a href="{% url 'tickets:edit_ticket' ticket.id %}" class="btn btn-primary btn-sm ">Editar</a>
                             </td>
                             <td>
                                 <a href="{% url 'tickets:delete_ticket' ticket.id %}" class="btn btn-danger btn-sm ">Excluir</a>
@@ -60,23 +67,6 @@
                         </tr> 
                     {% endfor %}
                 </tbody>
-
-                <!--<tbody>
-                    {% for ticket in tickets %}
-                    <tr>
-                        <th scope="row">{{ ticket.id }}</th>
-                        <td>{{ ticket.flight }}</td>
-                        <td>{{ ticket.price }}</td>
-                        <td>{{ ticket.passenger }}</td>
-                        <td>
-                            <a href="{% url 'tickets:edit_ticket' ticket.id %}" class="btn btn-primary btn-sm">Editar</a>
-                            <a href="{% url 'tickets:delete_ticket' ticket.id %}"
-                                class="btn btn-danger btn-sm ">Excluir</a>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>-->
-
             </table>
         </div>
     </div>

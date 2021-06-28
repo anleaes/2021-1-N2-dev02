@@ -28,7 +28,6 @@ urlpatterns = [
     path('paises/', include('countries.urls', namespace='countries')),
     path('estados/', include('states.urls', namespace='states')),
     path('cidades/', include('cities.urls', namespace='cities')),
-    path('rotas/', include('routes.urls', namespace='routes')),
     path('passageiros/', include('passengers.urls', namespace='passengers')),
     path('tickets/', include('tickets.urls', namespace='tickets')),
     path('flights/', include('flights.urls', namespace='flights')),

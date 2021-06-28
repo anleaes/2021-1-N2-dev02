@@ -53,7 +53,6 @@ INSTALLED_APPS = [
     'countries.apps.CountriesConfig',
     'states.apps.StatesConfig',
     'cities.apps.CitiesConfig',
-    'routes.apps.RoutesConfig',
     'passengers.apps.PassengersConfig',
     'tickets.apps.TicketsConfig',
     'flights.apps.FlightsConfig',

@@ -5,5 +5,5 @@ class TicketForm(forms.ModelForm):
 
     class Meta:
         model = Ticket
-        exclude = ('created_on' , 'updated_on',)
+        exclude = ('created_on' , 'updated_on')
 
