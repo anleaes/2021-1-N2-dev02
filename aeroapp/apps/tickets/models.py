@@ -18,6 +18,7 @@ class Ticket(models.Model):
     passenger = models.ForeignKey(Passenger, on_delete=models.CASCADE)
     flight = models.ForeignKey(Flight, on_delete=models.CASCADE, null=True)
     
+    
     class Meta:
         verbose_name = 'Ticket'
         verbose_name_plural = 'Tickets'
