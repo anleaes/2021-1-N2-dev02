@@ -10,7 +10,7 @@
 
     <div class="container">
         <br />
-        <h5><b>Lista de Países</b></h5>
+        <h5><b>Lista de Voos</b></h5>
         <div class="row">
             <div class ="col-md-12">
                 <br />
@@ -21,7 +21,7 @@
                 <thead>
                     <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Codigo do Voo</th>
+                    <th scope="col">Numero do Voo</th>
                     <th scope="col">Quantidade</th>
                     <th scope="col">Esta cheio</th>
                     <th scope="col">Aeronave</th>
@@ -37,7 +37,14 @@
                             <th scope="row">{{ flight.id }}</th>
                             <td>{{ flight.cod_flight }}</td>
                             <td>{{ flight.quantity }}</td>
-                            <td>{{ flight.is_full }}</td>
+                            <td>
+                                {% if flight.is_full == True %}
+                                    Sim
+                                {% endif %}
+                                {% if flight.is_full == False %}
+                                    Não
+                                {% endif %}
+                            </td>
                             <td>{{ flight.aircraft }}</td>
                             <td>{{ flight.city_from }}</td>
                             <td>{{ flight.city_to }}</td>

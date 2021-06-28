@@ -51,7 +51,14 @@
                             <td>{{ passenger.passport }}</td>
                             <td>{{ passenger.photo }}</td>
                             <td>{{ passenger.doc }}</td>
-                            <td>{{ passenger.special_needs }}</td>
+                            <td>
+                                {% if passenger.special_needs == True %}
+                                    Sim
+                                {% endif %}
+                                {% if passenger.special_needs == False %}
+                                    Não
+                                {% endif %}
+                            </td>
                             <td>{{ passenger.cargo_allowance }}</td>
                             <td>{{ passenger.socialnetwork }}</td>
                             <td>

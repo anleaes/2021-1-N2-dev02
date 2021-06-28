@@ -5,4 +5,4 @@ class SocialnetworkForm(forms.ModelForm):
 
     class Meta:
         model = Socialnetwork
-        exclude = ()
+        exclude = ('created_on' , 'updated_on',)

@@ -38,7 +38,14 @@
                             <td>{{ aircraft.description }}</td>
                             <td>{{ aircraft.date_fabrication }}</td>
                             <td>{{ aircraft.quantity_pax }}</td>
-                            <td>{{ aircraft.is_active }}</td>
+                            <td>
+                                {% if aircraft.is_active == True %}
+                                    Sim
+                                {% endif %}
+                                {% if aircraft.is_active == False %}
+                                    Não
+                                {% endif %}
+                            </td>
                             <td>
                                 <a href="{% url 'aircrafts:edit_aircraft' aircraft.id %}" class="btn btn-primary btn-sm">Editar</a>
                             </td>
