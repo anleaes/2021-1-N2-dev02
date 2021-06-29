@@ -23,10 +23,8 @@
                     <th scope="col">#</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Sobrenome</th>
-                    <th scope="col">Endereco</th>
                     <th scope="col">Telefone</th>
                     <th scope="col">E-mail</th>
-                    <th scope="col">Genero</th>
                     <th scope="col">Passaporte</th>
                     <th scope="col">Foto</th>
                     <th scope="col">Documento</th>
@@ -43,10 +41,8 @@
                             <th scope="row">{{ passenger.id }}</th>
                             <td>{{ passenger.first_name }}</td>
                             <td>{{ passenger.last_name }}</td>
-                            <td>{{ passenger.address }}</td>
                             <td>{{ passenger.cell_phone }}</td>
                             <td>{{ passenger.email }}</td>
-                            <td>{{ passenger.gender }}</td>
                             <td>{{ passenger.passport }}</td>
                             <td>
                                 <img src="{{ passenger.photo.url }}" width="50" height="50">
