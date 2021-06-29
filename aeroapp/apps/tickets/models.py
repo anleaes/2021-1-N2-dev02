@@ -9,15 +9,15 @@ from django.contrib.auth.models import User
 class Ticket(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    total_price = models.FloatField('Preco Total', null=True, blank=True, default=0.0)
     STATUS_CHOICES = (
         ('Em andamento', 'Em andamento'),
         ('Finalizado', 'Finalizado'),
         ('Cancelado', 'Cancelado'),
     )
     status = models.CharField('Status', max_length=20, choices=STATUS_CHOICES, null=True, blank=True, default='Em andamento')
-    passenger = models.ForeignKey(Passenger, on_delete=models.CASCADE)
+    total_price = models.FloatField('Preco Total', null=True, blank=True, default=0.0)
     flight = models.ForeignKey(Flight, on_delete=models.CASCADE, null=True)
+    passenger = models.ForeignKey(Passenger, on_delete=models.CASCADE)
     ticket_extra = models.ManyToManyField(Extra, through='TicketExtra', blank=True)
     
     class Meta:
