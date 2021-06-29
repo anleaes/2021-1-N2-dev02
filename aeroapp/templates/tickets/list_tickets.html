@@ -11,7 +11,6 @@
     <div class="container">
         <br />
         <h5><b>Lista de Voos x Tickets</b></h5>
-        <!-- <h5><b>Lista de Tickets</b></h5> -->
         <div class="row">
             <div class ="col-md-12">
 
@@ -53,7 +52,7 @@
                                 {{ ticket.passenger }}
                             </td>
                             <td>
-                                <a href="{% url 'tickets:edit_ticket' ticket.id %}" class="btn btn-primary btn-sm ">Adicionar</a>
+                                <a href="{% url 'tickets:add_ticket_extra' ticket.id %}" class="btn btn-primary btn-sm ">Adicionar</a>
                                 <br /> Primeira classe - R$ 1000,00 
                                 <br /> Champagne - R$ 500,00 
                                 <br /> Caviar - R$ 300,00 
