@@ -51,8 +51,6 @@
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">Clientes</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown05">
-                                <a class="dropdown-item" href="{% url 'socialnetworks:list_socialnetworks' %}">Redes
-                                    Sociais</a>
                                 <a class="dropdown-item" href="{% url 'passengers:list_passengers' %}">Passageiros</a>
                             </div>
                         </li>
@@ -127,10 +125,10 @@
         <script src="{% static 'js/select2.min.js' %}"></script>
 
 
-        {% block footer%}
+        {% block footer%} 
 
         <!-- Footer -->
-        <footer class="text-center text-lg-start bg-light text-muted">
+        <footer class="text-center text-lg-start bg-light text-muted lg-12" style="width: 100vw !important;">
             <!-- Section: Social media -->
 
             <!-- Section: Social media -->
@@ -160,27 +158,11 @@
                                 Paginas
                             </h6>
                             <p>
-                                <a href="#!" class="text-reset">Tickets</a>
+                                <a href="{% url 'tickets:list_tickets' %}" class="text-reset">Tickets</a>
                             </p>
 
                             <p>
-                                <a href="#!" class="text-reset">Voos</a>
-                            </p>
-
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                Recursos
-                            </h6>
-                            <p>
-                                <a href="#!" class="text-reset">Minha conta</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Fale Conosco</a>
+                                <a href="{% url 'flights:list_flights' %}" class="text-reset">Voos</a>
                             </p>
 
                         </div>
@@ -192,7 +174,8 @@
                             <h6 class="text-uppercase fw-bold mb-4">
                                 Contato
                             </h6>
-                            <p><i class="fas fa-home me-3"></i> Rua Lico Amaral, 255</p>
+                            <p><i class="fas fa-home me-3"></i> Avenida Castelo Branco, 255</p>
+                            <p><i class="fas fa-home me-3"></i> Horizontina, Rio Grande do Sul</p>
                         </div>
                         <!-- Grid column -->
                     </div>

@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import PassengerForm
-from .models import Passenger, Socialnetwork
+from .models import Passenger
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -22,13 +22,9 @@ def add_passenger(request):
 @login_required(login_url='/contas/login/')
 def list_passengers(request):
     template_name = 'passengers/list_passengers.html'
-    passenger_socialnetworks = Socialnetwork.objects.filter()
-    socialnetworks = Socialnetwork.objects.filter()
     passengers = Passenger.objects.filter()
     context = {
         'passengers': passengers,
-        'socialnetworks': socialnetworks,
-        'passenger_socialnetworks': passenger_socialnetworks
     }
     return render(request, template_name, context)
 

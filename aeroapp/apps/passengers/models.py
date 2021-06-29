@@ -1,5 +1,4 @@
 from django.db import models
-from socialnetworks.models import Socialnetwork
 
 # Create your models here.
 
@@ -22,7 +21,6 @@ class Passenger(models.Model):
     doc = models.FileField('Documentos', upload_to='docs')
     special_needs = models.BooleanField('Atendimento especial?', default=False)
     cargo_allowance = models.IntegerField('Bagagem permitida (KG)',null=True, blank=True,default=0)
-    socialnetwork = models.ManyToManyField(Socialnetwork)
     
     class Meta:
         verbose_name = 'Passageiro'
