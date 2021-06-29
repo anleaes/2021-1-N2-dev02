@@ -65,10 +65,17 @@ Lista de Tickets - {{ block.super }}
                                 <td>
                                     {% for ticket_extra in tickets_extras %}
                                         {% if ticket_extra.ticket_id == ticket.id %}
-                                            <b>Extra: {{ ticket_extra.extra}}</b></br>
+                                            {% for extra in extras %}
+                                                {% if extra.id == ticket_extra.extra_id %}
+                                                    <b>Extra: {{ ticket_extra.extra}}</b></br>
+                                                    <b>Preço: {{ extra.price}}</b></br>
+                                                {% endif %}
+                                            {% endfor %}     
                                         {% endif %} 
                                     {% endfor %}
                                 </td>
+
+                                
 
                                 <!--termina aqui-->
                                 <td>

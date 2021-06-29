@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .forms import TicketForm, TicketExtraForm
 from .models import TicketExtra
 from tickets.models import Ticket
+from extras.models import Extra
 
 # Create your views here.
 
@@ -40,9 +41,11 @@ def list_tickets(request):
     template_name = 'tickets/list_tickets.html'
     tickets = Ticket.objects.filter()
     tickets_extras = TicketExtra.objects.filter()
+    extras = Extra.objects.filter()
     context = {
         'tickets': tickets,
         'tickets_extras': tickets_extras,
+        'extras': extras,
     }
     return render(request, template_name, context)
 
